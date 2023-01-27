@@ -1,7 +1,7 @@
 
-# Welcome to your CDK Python project!
+# Data Product creation using AWS CDK - Prototype
 
-This is a blank project for CDK development with Python.
+## Data Domain and Product Definition
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
