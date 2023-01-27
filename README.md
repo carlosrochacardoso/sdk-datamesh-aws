@@ -3,6 +3,8 @@
 
 ## Data Domain and Product Definition
 
+![prototype diagram](images/prototype_diagram.png)
+
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 This project is set up like a standard Python project.  The initialization
