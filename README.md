@@ -3,7 +3,58 @@
 
 ## Data Domain and Product Definition
 
+- `data_product_definition.py` file describes the data domain and data product definitions using the sdk-datamesh
+- `sdk_datamesh` folder contains the DataPlatform class and AWS CDK stacks for domain and data products components
+
 ![prototype diagram](images/prototype_diagram.png)
+
+## Deploy on AWS
+
+- Install AWS CDK locally. This reference can help:
+https://medium.com/dataengineerbr/creating-a-local-environment-to-develop-on-aws-cdk-with-docker-and-vscode-f26569d30870
+
+- Setup AWS credentials locally
+
+- Bootstrap AWS Account for deploy
+https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html
+
+- To manually create a virtualenv on MacOS and Linux:
+
+```
+$ python3 -m venv .venv
+```
+
+- Activate your virtualenv:
+
+```
+$ source .venv/bin/activate
+```
+
+- Once the virtualenv is activated, install the required dependencies.
+
+```
+$ pip install -r requirements.txt
+```
+
+- At this point you can now synthesize the CloudFormation template for this code.
+
+```
+$ cdk synth
+```
+
+- Finally, deploy CDK project
+
+```
+cdk deploy --all
+```
+
+## About AWS CDK
+
+API Reference:
+https://docs.aws.amazon.com/cdk/api/v2/python/index.html
+
+Developer Guide:
+https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
@@ -14,36 +65,6 @@ directory.  To create the virtualenv it assumes that there is a `python3`
 package. If for any reason the automatic creation of the virtualenv fails,
 you can create the virtualenv manually.
 
-To manually create a virtualenv on MacOS and Linux:
-
-```
-$ python3 -m venv .venv
-```
-
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
-
-```
-$ source .venv/bin/activate
-```
-
-If you are a Windows platform, you would activate the virtualenv like this:
-
-```
-% .venv\Scripts\activate.bat
-```
-
-Once the virtualenv is activated, you can install the required dependencies.
-
-```
-$ pip install -r requirements.txt
-```
-
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
 
 To add additional dependencies, for example other CDK libraries, just add
 them to your `setup.py` file and rerun the `pip install -r requirements.txt`
