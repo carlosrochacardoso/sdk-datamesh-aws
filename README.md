@@ -3,7 +3,7 @@
 
 ## Data Domain and Product Definition
 
-- `data_product_definition.py` file describes the data domain and data product definitions using the sdk-datamesh
+- `data_product_definition.py` file contains the data domain and data product definitions using the sdk-datamesh
 - `sdk_datamesh` folder contains the DataPlatform class and AWS CDK stacks for domain and data products components
 
 ![prototype diagram](images/prototype_diagram.png)
