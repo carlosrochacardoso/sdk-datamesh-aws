@@ -20,13 +20,18 @@ class DataMeshDomain:
     def __init__(self, platform_context, name) -> None:
         self.name = name
         self.platform_context = platform_context
-        platform_stack = SdkDataMeshPlatformStack(platform_context, f"datamesh-platform-{name}-stack", domain_name=name) 
+        platform_stack = SdkDataMeshPlatformStack(
+            platform_context, 
+            f"datamesh-platform-{name}-stack", 
+            domain_name=name
+        ) 
         self.code_bucket = platform_stack.get_code_bucket()
         self.data_bucket = platform_stack.get_data_bucket()
         self.database_name = platform_stack.get_database_name()
 
 class DataMeshDataProduct:
     def __init__(self, domain, name, job_script) -> None:
+        self.name = name
         SdkDataMeshProductStack(
             domain.platform_context,
             f"datamesh-product-{domain.name}-{name}-stack",
@@ -34,4 +39,4 @@ class DataMeshDataProduct:
             data_product_name=name,
             job_script=job_script
         ) 
-        self.name = name
+        
